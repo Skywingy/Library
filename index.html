@@ -15,9 +15,9 @@
             <p>Library in the Corner</p>
         </header>
         <div class = "first">
-            <button type="button">New Book</button>
+            <button type="button" onclick="addBook();">+New Book</button>
         </div>
-        <div class = "form">
+        <div class = "form" id = "form1">
             <form>
                 <label for="title"></label><br>
                 <input type="text" id="title" name="title" value="" placeholder="Title"><br>
@@ -26,19 +26,18 @@
                 <label for="pages"></label><br>
                 <input type="number" id="pages" name="pages" value="" placeholder="Pages"><br><br>
                 <input type="checkbox" id="read" name="read" value="Read">
-                <label for="read">Read</label><br><br><br>
-                <input type="submit" value="Add book">
+                <label for="read">Read</label><br><br>
+                <input type="submit" onclick="add();" value="Add book">
             </form>
         </div>
-        <div class = "card">
+        <div class = "card" id = "form2">
                 <label for="title">title here</label><br>
                 <label for="author">author here</label><br>
-                <label for="pages">pages here</label><br>
-                <div class = "checkbox">
-                    <input type="checkbox" id="read" name="read" value="Read">
-                    <label for="read">Read</label><br><br><br>
+                <label for="pages">pages here</label><br><br><br>
+                <div class="buttonC">
+                    <input type="button" value="Remove" onclick=""><br>
+                    <input type="button" value="Read" onclick="">
                 </div>
-                <input type="button" value="Remove" onclick="">
         </div>
     </div>
 

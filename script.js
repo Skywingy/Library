@@ -12,10 +12,10 @@ for (let i = 0; i < myLibrary.length; i++) {
     console.table(myLibrary[i]);
 }
 
-function on() {
-    document.getElementById("overlay").style.display = "block";
-  }
-  
-  function off() {
-    document.getElementById("overlay").style.display = "none";
-  }
+function addBook() {
+    document.getElementById('form1').style.display = 'block';
+}
+
+function add() {
+    document.getElementById('form2').style.display = 'block';
+}

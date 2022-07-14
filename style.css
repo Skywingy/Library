@@ -1,0 +1,43 @@
+html, body {
+    height:100% !important;
+    width:100% !important; 
+    margin:0px; 
+    padding:0px;
+} 
+.container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 10% 15% auto auto;
+    justify-items: center; 
+    align-items: center;
+    
+}
+
+.library {
+    grid-column: 1/4;
+    
+}
+
+.first {
+    grid-column: 1/4;
+}
+
+.form {
+    grid-column: 1/4;
+    border: 1px solid grey;
+    padding: 15px 15px 25px 15px;
+    margin-bottom: 20px;
+
+}
+
+.card {
+    grid-column: 1/4;
+    border: 1px solid grey;
+    padding: 15px 15px 25px 15px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+}

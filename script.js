@@ -1,8 +1,3 @@
-//button event listeners for create new book, add new book to page, close popup
-
-
-
-
 // book constructor
 
 function Book(Title, Author, Pages, Read) {
@@ -13,11 +8,12 @@ function Book(Title, Author, Pages, Read) {
 }
 
 
-//creates book from Book Constructor, adds to library
+// stores new created books into this library
 
 let myLibrary = [];
 
 
+//creates book from Book Constructor, adds to library
 
 function addBookToLibrary(Title, Author, Pages, Read) {
     let book = new Book(Title, Author, Pages, Read);
@@ -45,6 +41,7 @@ function render(){
         card.setAttribute("id", "cards");
         books.appendChild(card);
 
+// creates remove button on the card
         const removeB = document.createElement("BUTTON");
         removeB.classList.add("removeB");
         const textB = document.createTextNode("Remove");
@@ -60,7 +57,7 @@ function render(){
             card.remove();
             render();
         }
-
+//loops through myLibrary and 
         for (let key in myLibrarys) {
             console.log(`${key}: ${myLibrarys[key]}`);
             const para = document.createElement("p");
@@ -82,16 +79,23 @@ function render(){
 
 const addBookButton = document.querySelector(".addBook");
 addBookButton.addEventListener("click", displayTheForm);
+addBookButton.addEventListener("click", noneButton);
+
+//displays the form when clicked add book
 
 
-//displays the form
 function displayTheForm() {
     document.getElementById("addBookForm").style.display = "";
 };
 
+function noneButton() {
+    document.getElementById("addBook").style.display = "none";
+}
+
 //intake form data into myLibrary array
 const submitButton = document.querySelector(".submitB");
 submitButton.addEventListener("click", intakeFormData);
+
 
 function intakeFormData() {
     let Title = document.getElementById("Title").value;

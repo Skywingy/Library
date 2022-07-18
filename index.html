@@ -12,25 +12,25 @@
 <body>
     <div class = "container">
         <div class = "form-heading">
-            <h1>Add new book to library</h1>
+            <h1>Books in the corner</h1>
         </div>
         <div class = "books-heading">
-            <h1>Current books in library</h1>
+            <h1></h1>
         </div>
         <div class = "form">
-            <button class = "addBook"> Add New Book</button>
-            <div id = "addBookForm" style = "display: none;">
+            <button class = "addBook" id = "addBook" style = "display:''"> Add New Book</button>
+            <div id = "addBookForm" class = "bookform" style = "display: none;">
                 <form id = "add-book">
                     <label for = "Title">Title:</label>
                     <input type = "text" id = "Title" name = "Title">
-                    <label for = "Author">Title:</label>
+                    <label for = "Author">Author:</label>
                     <input type = "text" id = "Author" name = "Author">
                     <label for = "Pages">Pages:</label>
                     <input type = "number" id = "Pages" name = "Pages">
                     <label for = "Read">Read:</label>
                     <input type = "text" id = "Read" name = "Read">
                 </form>
-                <button type = "submit" class = "submitB">Submit to Library</button>
+                <button type = "submit" class = "submitB" id = "submitB">Submit to Library</button>
                 <button type = "reset" class = "resetB">Reset Form</button>
             </div>
         </div>

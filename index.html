@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Books in the Corner</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@200;500&family=Comfortaa:wght@500&family=Lato&family=Mukta:wght@300&family=PT+Sans:ital@1&family=Tajawal:wght@300&family=Titillium+Web&family=Ubuntu:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
     <script src = "script.js" defer></script>
 
 </head>
@@ -21,14 +24,17 @@
             <button class = "addBook" id = "addBook" style = "display:''"> Add New Book</button>
             <div id = "addBookForm" class = "bookform" style = "display: none;">
                 <form id = "add-book">
-                    <label for = "Title">Title:</label>
-                    <input type = "text" id = "Title" name = "Title">
-                    <label for = "Author">Author:</label>
-                    <input type = "text" id = "Author" name = "Author">
-                    <label for = "Pages">Pages:</label>
-                    <input type = "number" id = "Pages" name = "Pages">
+                    <label for = "Title"></label>
+                    <input type = "text" id = "Title" name = "Title" placeholder="Title">
+                    <label for = "Author"></label>
+                    <input type = "text" id = "Author" name = "Author" placeholder="Author">
+                    <label for = "Pages"></label>
+                    <input type = "number" id = "Pages" name = "Pages" placeholder="Pages">
                     <label for = "Read">Read:</label>
-                    <input type = "text" id = "Read" name = "Read">
+                    <select id = "Read", name = "Read">
+                        <option value = "Yes">Yes</option>
+                        <option value = "No">No</option>
+                    </select>
                 </form>
                 <button type = "submit" class = "submitB" id = "submitB">Submit to Library</button>
                 <button type = "reset" class = "resetB">Reset Form</button>

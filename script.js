@@ -46,7 +46,7 @@ function render(){
         removeB.classList.add("removeB");
         const textB = document.createTextNode("Remove");
         removeB.dataset.linkedArray = index;
-        index++;
+        
         removeB.appendChild(textB);
         card.appendChild(removeB);
         removeB.addEventListener("click", removeBu);
@@ -57,6 +57,37 @@ function render(){
             card.remove();
             render();
         }
+
+        //Creating read status button and add class attribute for each array card
+        const readStatusB = document.createElement("button");
+        readStatusB.classList.add("readStatusB");
+        readStatusB.textContent = "Toggle Read Status";
+
+        //Link the data attribute of the toggle read button to the array and card
+        readStatusB.dataset.linkedArray = index;
+        console.log("Show me:", readStatusB.dataset.linkedArray);
+        card.appendChild(readStatusB);
+
+        //create event listener to toggle for array objects prototype for read status change
+
+        readStatusB.addEventListener("click", toggleReadStatus);
+
+        function toggleReadStatus() {
+            let  retBooktoToggle = readStatusB.dataset.linkedArray;
+            Book.prototype = Object.create(Book.prototype);
+            const toggleBook = new Book();
+        
+
+            if ((myLibrary[parseInt(retBooktoToggle)].Read) == "Yes") {
+            toggleBook.Read = "No";
+            myLibrary[parseInt(retBooktoToggle)].Read = toggleBook.Read;
+            } else if ((myLibrary[parseInt(retBooktoToggle)].Read) == "No") {
+            toggleBook.Read = "Yes";
+            myLibrary[parseInt(retBooktoToggle)].Read = toggleBook.Read;
+            }
+            render();
+        }
+
 //loops through myLibrary and 
         for (let key in myLibrarys) {
             console.log(`${key}: ${myLibrarys[key]}`);
@@ -65,6 +96,8 @@ function render(){
             card.appendChild(para);
         
         }
+        
+        index++;
         
     })
 }
@@ -95,6 +128,9 @@ function noneButton() {
 //intake form data into myLibrary array
 const submitButton = document.querySelector(".submitB");
 submitButton.addEventListener("click", intakeFormData);
+submitButton.addEventListener("click", undDisplayTheForm);
+submitButton.addEventListener("click", onButton);
+
 
 
 function intakeFormData() {
@@ -109,8 +145,15 @@ function intakeFormData() {
 
 addBookToLibrary(Title, Author, Pages, Read);
 document.getElementById("add-book").reset();
-
 };
+
+function undDisplayTheForm() {
+    document.getElementById("addBookForm").style.display = "none";
+}
+
+function onButton() {
+    document.getElementById("addBook").style.display = "";
+}
 
 const clearButton = document.querySelector(".resetB");
 clearButton.addEventListener("click", clearForm);

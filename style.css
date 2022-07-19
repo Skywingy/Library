@@ -1,13 +1,25 @@
 html, body {
     max-width:100vw;
     height: 100vh;
+    font-family: 'Bitter', serif;
 }
 
 .card {
     border: 1px solid black;
-    margin-bottom: 10px;
-    margin-left: 10px;
+    margin: 10px;
     padding: 15px;
+    padding-bottom: 40px;
+    width: 180px;
+    height: 250px;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    border-radius: 30px;
+    font-weight: bolder;
+    font-size: 15px;
+    color: gray;
+    
 }
 
 .container {
@@ -15,19 +27,81 @@ html, body {
     width: 100%;
     height: 100%;
     grid-template-columns: 1fr;
-    grid-template-rows: 10% 0% 1fr 1fr;
+    grid-template-rows: 15% 0% auto 1fr;
     justify-items: center;
+    gap: 10px;
+}
+
+.removeB {
+    grid-row: 6/7;
+}
+
+.readStatusB {
+    grid-row: 5/6;
 }
 
 .bookform {
     display: flex;
     flex-direction: column;
+    border: 1px solid black;
+    padding: 20px 15px 20px 15px;
+    border-radius: 20px;
+    margin-top: 15px;
+}
+
+body, input, textarea, button {
+    font-family: 'Bitter', serif;
+}
+
+input {
+    margin-bottom: 8px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bolder;
+    font-size: 15px;
+    color: gray;
+    
+}
+
+#Read {
+    color: gray;
+    font-color
+}
+
+
+#add-book {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.submitB, .resetB {
+    margin-bottom: 15px;
+    padding: 7px 10px;
+    border-radius: 8px;
+    border-style: none;
+}
+
+.readStatusB, .removeB {
+    margin-bottom: 20px;
+    padding: 7px 10px;
+    border-radius: 8px;
+    border-style: none;
 }
 
 .books {
 display: grid;
 width: 100vw;
-height: 100vh;
+height: 100%;
 grid-template-columns: repeat( auto-fit, minmax(100px, 1fr) );
-grid-template-rows: 1fr 1fr 1fr;
+margin-top: 40px;
+}
+
+#addBook {
+    padding: 7px 10px;
+    border-radius: 8px;
+    border-style: none;
 }

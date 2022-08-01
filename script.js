@@ -1,39 +1,41 @@
 // book constructor
-
-function Book(Title, Author, Pages, Read) {
+// function Book(Title, Author, Pages, Read) {
+//     this.Title = Title;
+//     this.Author = Author;
+//     this.Pages = Pages;
+//     this.Read = Read;
+// }
+class Book {
+    constructor(Title, Author, Pages, Read){
     this.Title = Title;
     this.Author = Author;
     this.Pages = Pages;
     this.Read = Read;
+    }
 }
-
-
 // stores new created books into this library
-
 let myLibrary = [];
 
-
-//creates book from Book Constructor, adds to library
-
+//creates book from Book Constructor, adds to library and calss render function
 function addBookToLibrary(Title, Author, Pages, Read) {
     let book = new Book(Title, Author, Pages, Read);
+    console.log(book);
     myLibrary.push(book);
     render();
-
 }
 
-
-//Creates book visual in browser
-
+//Creates book visually  in browser
 function render(){
     const books = document.querySelector(".books");
     
-
+//Removes the same card when new card adds
     const removeDivs = document.querySelectorAll(".card");
     console.log("Here", removeDivs);
     for (let i = 0; i < removeDivs.length; i++) {
         removeDivs[i].remove();
     }
+
+//
     let index = 0;
     myLibrary.forEach(myLibrarys => {
         const card = document.createElement("div");
@@ -115,8 +117,6 @@ addBookButton.addEventListener("click", displayTheForm);
 addBookButton.addEventListener("click", noneButton);
 
 //displays the form when clicked add book
-
-
 function displayTheForm() {
     document.getElementById("addBookForm").style.display = "";
 };
@@ -130,8 +130,6 @@ const submitButton = document.querySelector(".submitB");
 submitButton.addEventListener("click", intakeFormData);
 submitButton.addEventListener("click", undDisplayTheForm);
 submitButton.addEventListener("click", onButton);
-
-
 
 function intakeFormData() {
     let Title = document.getElementById("Title").value;
